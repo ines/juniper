@@ -139,6 +139,7 @@ The following options are available when initialising `Juniper`:
 | `serverSettings` | object | Experimental: Use different server settings and connect to request a kernel from a notebook server. Can include a `baseUrl`, a `wsUrl` (websockets) and a `token`. | `{}` |
 | `eventName` | string | Name of the custom event dispatched for status updates. | `'juniper'` |
 | `msgLoading` | string | Text displayed after successful connection and before the response is ready. | `'Loading...'` |
+| `msgError` | string | Text displayed if connecting failed. | `'Connecting failed. Please reload and try again.'` |
 | `selector` | string | Element selector for code blocks. | `'[data-executable]'` |
 | `classNames` | object | Overwrite the class names for `cell`, `input`, `button` and `output`. | [see here](#customising-the-widget-style) |
 

@@ -32,6 +32,7 @@ class Juniper {
         this.storageKey = options.storageKey || 'juniper';
         this.eventName = options.eventName || 'juniper';
         this.msgLoading = options.msgLoading || 'Loading...';
+        this.msgError = options.msgError || 'Connecting failed. Please reload and try again.';
         const classNames = options.classNames || {};
         this.classNames = {
             cell: classNames.cell || 'juniper-cell',
@@ -187,6 +188,12 @@ class Juniper {
                     .catch(() => {
                         this._event('failed');
                         this._kernel = null;
+                        outputArea.model.clear();
+                        outputArea.model.add({
+                            output_type: 'stream',
+                            name: 'failure',
+                            text: this.msgError
+                        });
                     })
                 return;
             }
@@ -215,6 +222,12 @@ class Juniper {
                     this._fromStorage = false;
                     window.localStorage.removeItem(this.storageKey);
                 }
+                outputArea.model.clear();
+                outputArea.model.add({
+                    output_type: 'stream',
+                    name: 'failure',
+                    text: this.msgError
+                });
             })
     }
 
