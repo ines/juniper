@@ -1,7 +1,7 @@
 {
   "name": "juniper",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Edit and execute code snippets in the browser using Jupyter kernels",
   "main": "dist/juniper.min.js",
   "scripts": {

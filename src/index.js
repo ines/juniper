@@ -187,7 +187,6 @@ class Juniper {
                     .catch(() => {
                         this._event('failed');
                         this._kernel = null;
-                        this.execute(outputArea, code);
                     })
                 return;
             }
@@ -216,7 +215,6 @@ class Juniper {
                     this._fromStorage = false;
                     window.localStorage.removeItem(this.storageKey);
                 }
-                this.execute(outputArea, code);
             })
     }
 
