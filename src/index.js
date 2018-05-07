@@ -30,6 +30,7 @@ class Juniper {
         this.useBinder = options.useBinder == undefined ? true : options.useBinder;
         this.useStorage = options.useStorage == undefined ? true : options.useStorage;
         this.storageKey = options.storageKey || 'juniper';
+        this.storageExpire = options.storageExpire || 1440;
         this.eventName = options.eventName || 'juniper';
         this.msgLoading = options.msgLoading || 'Loading...';
         this.msgError = options.msgError || 'Connecting failed. Please reload and try again.';
@@ -56,8 +57,11 @@ class Juniper {
             const stored = window.localStorage.getItem(this.storageKey);
             if (stored) {
                 this._fromStorage = true;
-                const json = JSON.parse(stored);
-                return this.requestKernel(json);
+                const { settings, timestamp } = JSON.parse(stored);
+                if (timestamp && new Date().getTime() < timestamp) {
+                    return this.requestKernel(settings);
+                }
+                window.localStorage.removeItem(this.storageKey);
             }
         }
         if (this.useBinder) {
@@ -115,7 +119,8 @@ class Juniper {
      */
     requestKernel(settings) {
         if (this.useStorage && typeof window !== 'undefined') {
-            const json = JSON.stringify(settings);
+            const timestamp = new Date().getTime() + this.storageExpire * 60 * 1000;
+            const json = JSON.stringify({ settings, timestamp });
             window.localStorage.setItem(this.storageKey, json);
         }
         const serverSettings = ServerConnection.makeSettings(settings);

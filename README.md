@@ -135,6 +135,7 @@ The following options are available when initialising `Juniper`:
 | `noAutoInit` | boolean | Don't initialise the cells on load. You then have to call the `renderCell` method manually on each element. | `false` |
 | `useStorage` | boolean | Experimental: Use the browser's `localStorage` to save the connection parameters. If the user navigates to a different page, the binder won't have to be requested from scratch. | `true` |
 | `storageKey` | string | Key used to save the parameters in the `localStorage`. Change this if you don't want your settings to clash with other sites using Juniper. | `'juniper'` |
+| `storageExpire` | number | Time in minutes after which parameters in the local storage expire. Ensures that Juniper reconnects if the connection isn't available anymore. | `1440` |
 | `useBinder` | boolean | Use [Binder](https://mybinder.org) or another BinderHub deployment to request a kernel. If set to `false`, the `serverSettings` are passed to JupyterLab directly. Use at your own risk. | `true` |
 | `serverSettings` | object | Experimental: Use different server settings and connect to request a kernel from a notebook server. Can include a `baseUrl`, a `wsUrl` (websockets) and a `token`. | `{}` |
 | `eventName` | string | Name of the custom event dispatched for status updates. | `'juniper'` |
