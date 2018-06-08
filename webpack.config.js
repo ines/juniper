@@ -16,12 +16,12 @@ module.exports = {
     mode: process.env.NODE_ENV || 'development',
     entry: path.resolve(sourceDir, 'index.js'),
     output: {
-        filename: `${pkg.name}.min.js`,
+        filename: `${pkg.displayname}.min.js`,
         path: buildDir
     },
     plugins: [
         // replace CSS
-        shim(/@jupyterlab\/.*\.css/, path.resolve(sourceDir, `${pkg.name}.css`)),
+        shim(/@jupyterlab\/.*\.css/, path.resolve(sourceDir, `${pkg.displayname}.css`)),
         // shim unused packages – source: https://github.com/minrk/thebelab
         shim(/moment/),
         shim(/codemirror\/keymap\/vim/),
@@ -51,7 +51,7 @@ module.exports = {
                         options: {
                             singleton: true,
                             insertAt: 'top',
-                            attrs: { 'data-added-by': pkg.name }
+                            attrs: { 'data-added-by': pkg.displayname }
                         }
                     },
                     {
