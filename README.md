@@ -16,6 +16,10 @@ their great service available and allowing such a smooth integration.
 
 ![juniper](https://user-images.githubusercontent.com/13643239/39436623-c367b108-4c9e-11e8-8749-08f4f162a7f1.gif)
 
+[![npm](https://img.shields.io/npm/v/juniper-js.svg?style=flat-square)](https://www.npmjs.com/package/juniper-js)
+[![GitHub](https://img.shields.io/github/release/ines/juniper/all.svg?style=flat-square)](https://github.com/ines/juniper)
+[![unpkg](https://img.shields.io/badge/unpkg-juniper.min.js-brightgreen.svg?style=flat-square)](https://unpkg.com/juniper-js)
+
 ## Quickstart
 
 To add interactive code widgets to your site, you'll need a GitHub repository
