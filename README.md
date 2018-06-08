@@ -25,7 +25,7 @@ environment. Using the repository, you can build a Docker image on
 When a user connects to the code widget, Binder will start up a Docker
 container for them.
 
-You'll also need to include [`juniper.min.js`](dist/juniper), add a
+You'll also need to include [`juniper.min.js`](dist/juniper.min.js), add a
 `data-executable` attribute to elements containing code and initialise the
 module. See [the list of options](#options) for a full overview of the available
 settings.
