@@ -30,7 +30,7 @@ class Juniper {
         this.useBinder = options.useBinder == undefined ? true : options.useBinder;
         this.useStorage = options.useStorage == undefined ? true : options.useStorage;
         this.storageKey = options.storageKey || 'juniper';
-        this.storageExpire = options.storageExpire || 1440;
+        this.storageExpire = options.storageExpire || 60;
         this.eventName = options.eventName || 'juniper';
         this.msgLoading = options.msgLoading || 'Loading...';
         this.msgError = options.msgError || 'Connecting failed. Please reload and try again.';
