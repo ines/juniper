@@ -29,7 +29,7 @@
     "browser"
   ],
   "devDependencies": {
-    "@jupyterlab/outputarea": "^0.16.3",
+    "@jupyterlab/outputarea": "^0.19.1",
     "@jupyterlab/services": "^2.0.3",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
