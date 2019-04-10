@@ -124,7 +124,7 @@ class Juniper {
             window.localStorage.setItem(this.storageKey, json);
         }
         const serverSettings = ServerConnection.makeSettings(settings);
-        return Kernel.startNew({ type: this.kernelType, serverSettings })
+        return Kernel.startNew({ type: this.kernelType, name: this.kernelType, serverSettings })
             .then(kernel => {
                 this._event('ready');
                 return kernel;
